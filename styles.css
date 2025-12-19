@@ -10,6 +10,8 @@
 
 html {
     scroll-behavior: smooth;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 * {
@@ -23,7 +25,10 @@ body {
     color: var(--text-main);
     font-family: var(--font-main);
     line-height: 1.6;
+    max-width: 100%;
     overflow-x: hidden;
+    position: relative;
+    width: 100%;
 }
 
 main {
@@ -46,13 +51,16 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem 10%;
+    padding: 1rem 5%;
     position: fixed;
     width: 100%;
     top: 0;
+    left: 0;
+    right: 00;
     z-index: 1000;
     background: rgba(10, 10, 10, 0.8);
     backdrop-filter: blur(10px);
+    box-sizing: border-box;
 }
 
 #nav-logo {
@@ -435,44 +443,63 @@ nav,
 
 /* 2. Mobile Rules (Triggered when screen is less than 768px wide) */
 @media screen and (max-width: 768px) {
+    /* 1. Scale down the logo so it doesn't crowd the hamburger */
+    #nav-logo {
+        height: 60px; 
+    }
+
     .menu-toggle {
         display: flex; /* Show the hamburger */
     }
 
     .nav-links {
         position: fixed;
-        right: -100%; /* Push menu off-screen to the right */
+        right: -100%; 
         top: 0;
         flex-direction: column;
-        background: rgba(10, 10, 10, 0.98); /* Solid dark background */
+        background: rgba(10, 10, 10, 0.98); 
         width: 100%;
         height: 100vh;
         justify-content: center;
         align-items: center;
         transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         backdrop-filter: blur(15px);
-        gap: 3rem; /* Space out links more on mobile */
+        gap: 3rem; 
     }
 
     .nav-links.active {
-        right: 0; /* Slide menu in when active */
+        right: 0; 
     }
 
     .nav-links a {
-        font-size: 1.5rem; /* Make links bigger for thumb-tapping */
+        font-size: 1.5rem; 
     }
 
-    /* Transform Hamburger into an 'X' when menu is open */
+    /* Transform Hamburger into an 'X' */
     .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
     .menu-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
     .menu-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-    /* Adjust section padding so text isn't cramped on small screens */
+    /* 2. FIX: Shrink the huge hero text so it doesn't bleed off-screen */
+    .hero h1 {
+        font-size: 2.8rem; 
+        line-height: 1.2;
+    }
+
+    /* 3. FIX: Stack the About section properly */
     section {
-        padding: 80px 6%;
+        padding: 80px 20px;
+        width: 100%;
+        overflow: hidden; /* Safety lock for each section */
     }
     
     .about-container {
         gap: 2rem;
+        flex-direction: column; /* Stacks image below text */
+    }
+
+    .about-content, .about-image {
+        flex: 1 1 100%;
+        min-width: 0;
     }
 }
