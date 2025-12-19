@@ -422,6 +422,8 @@ nav,
     cursor: pointer;
     gap: 6px;
     z-index: 1001;
+    width: 30px;
+    height: 21px;
 }
 
 .bar {
