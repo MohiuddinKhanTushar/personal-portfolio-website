@@ -412,3 +412,65 @@ nav,
 .back-to-top {
     pointer-events: all;
 }
+
+/* --- MOBILE NAVIGATION & HAMBURGER --- */
+
+/* 1. Hide the hamburger icon on Desktop */
+.menu-toggle {
+    display: none; 
+    flex-direction: column;
+    cursor: pointer;
+    gap: 6px;
+    z-index: 1001;
+}
+
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-main);
+    transition: all 0.3s ease;
+}
+
+/* 2. Mobile Rules (Triggered when screen is less than 768px wide) */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Show the hamburger */
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%; /* Push menu off-screen to the right */
+        top: 0;
+        flex-direction: column;
+        background: rgba(10, 10, 10, 0.98); /* Solid dark background */
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        backdrop-filter: blur(15px);
+        gap: 3rem; /* Space out links more on mobile */
+    }
+
+    .nav-links.active {
+        right: 0; /* Slide menu in when active */
+    }
+
+    .nav-links a {
+        font-size: 1.5rem; /* Make links bigger for thumb-tapping */
+    }
+
+    /* Transform Hamburger into an 'X' when menu is open */
+    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+    .menu-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+    /* Adjust section padding so text isn't cramped on small screens */
+    section {
+        padding: 80px 6%;
+    }
+    
+    .about-container {
+        gap: 2rem;
+    }
+}

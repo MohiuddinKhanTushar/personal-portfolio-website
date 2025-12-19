@@ -69,3 +69,18 @@ window.addEventListener('scroll', function() {
 
 // Run everything when the window is fully loaded
 window.addEventListener('load', initPortfolio);
+
+// Toggle Mobile Menu
+const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('.nav-links');
+
+menu.addEventListener('click', function() {
+    menu.classList.toggle('active');
+    menuLinks.classList.toggle('active');
+});
+
+// Close menu when a link is clicked (so it doesn't stay open over the section)
+document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click', () => {
+    menu.classList.remove('active');
+    menuLinks.classList.remove('active');
+}));
