@@ -84,3 +84,10 @@ document.querySelectorAll('.nav-links a').forEach(n => n.addEventListener('click
     menu.classList.remove('active');
     menuLinks.classList.remove('active');
 }));
+
+// Force page to scroll to top on reload
+if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+}
+
+window.scrollTo(0, 0);
