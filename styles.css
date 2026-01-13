@@ -221,6 +221,139 @@ section {
     line-height: 1.5;
 }
 
+/* --- Modal Container --- */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(10, 10, 10, 0.7); /* Darker backdrop */
+    backdrop-filter: blur(12px); /* Premium blur effect */
+    transition: all 0.4s ease;
+}
+
+/* --- The Animation --- */
+@keyframes modalGrow {
+    from {
+        opacity: 0;
+        transform: scale(0.3); /* Starts small (like it's coming from the card) */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1); /* Grows to full size */
+    }
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 5% auto;
+    padding: 3rem;
+    border: 1px solid rgba(255, 115, 0, 0.4);
+    border-radius: 20px;
+    width: 85%;
+    max-width: 800px;
+    position: relative;
+    color: var(--text-main);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5), 0 0 30px rgba(255, 115, 0, 0.1);
+    
+    /* Apply the grow animation */
+    animation: modalGrow 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 2.5rem; /* Bigger for better UX */
+    font-weight: bold;
+    cursor: pointer;
+    color: var(--text-dim);
+    line-height: 1;
+    z-index: 2001; /* Ensure it's above modal content */
+    padding: 10px; /* Larger 'hit' area for mouse/finger */
+    transition: color 0.3s ease;
+}
+
+.close-modal:hover { color: var(--accent-orange); }
+
+.modal-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+/* On larger screens, maybe two columns for a more "corporate" feel */
+@media screen and (min-width: 768px) {
+    .modal-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .modal-grid div:last-child {
+        grid-column: span 2; /* "The Result" spans full width at the bottom */
+    }
+}
+
+.modal-grid h4 { color: var(--accent-orange); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem; }
+
+/* Container for the buttons */
+.modal-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Base button style */
+.modal-btn {
+    flex: 1; /* Makes buttons equal width */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0.8rem 1.2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+/* GitHub Button - Dark/Sleek */
+.github-btn {
+    background: #24292e;
+    color: white;
+    border: 1px solid #444;
+}
+
+.github-btn:hover {
+    background: #333;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* Notion Button - Accent Orange */
+.notion-btn {
+    background: transparent;
+    color: var(--accent-orange);
+    border: 1px solid var(--accent-orange);
+}
+
+.notion-btn:hover {
+    background: var(--accent-orange);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 115, 0, 0.2);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+    .modal-actions {
+        flex-direction: column; /* Stack buttons on small screens */
+    }
+}
+
 /* --- Tech Icons Style --- */
 .project-tech {
     display: flex;
@@ -234,6 +367,46 @@ section {
     color: var(--accent-orange);
     transform: translateY(-2px);
     transition: all 0.3s ease;
+}
+
+/* Container for the two bottom links */
+.project-links-row {
+    margin-top: auto; /* Pushes the whole row to the bottom of the card */
+    display: flex;
+    justify-content: space-between; /* Left and Right alignment */
+    align-items: flex-end;
+    padding-top: 1rem;
+    width: 100%;
+}
+
+/* Style for the new Technical Details link */
+.details-link {
+    color: var(--accent-orange);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease-out; /* Smooth ease-out for a premium feel */
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+}
+
+.details-link:hover {
+    color: #ff9540; /* Slightly lighter orange to simulate light */
+    transform: scale(1.08); /* The Grow effect */
+    text-shadow: 0 0 10px rgba(255, 115, 0, 0.6), 0 0 20px rgba(255, 115, 0, 0.2); /* The Glow effect */
+}
+
+.details-link::after {
+    display: none;
+}
+
+.details-link:hover::after {
+    opacity: 1;
+    right: 0; /* Slides into position */
 }
 
 .view-link {

@@ -131,8 +131,16 @@
                             <i class="fas fa-database" title="Firestore / NoSQL"></i>
                             <i class="fab fa-github"></i>
                         </div>
-                        <a href="#" class="view-link">View Project</a>
+                        
+                        <div class="project-tech">
+                            </div>
+
+                        <div class="project-links-row">
+                            <a href="#" class="view-link">View Project</a>
+                            <a href="javascript:void(0)" class="details-link" onclick="openCRMDetails()">Technical Details</a>
+                        </div>
                     </div>
+
                 </article>
             </div>
         </section>
@@ -164,5 +172,13 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="scripts.js"></script>
+
+    <div id="project-modal" class="modal">
+    <div class="modal-content" data-aos="zoom-in">
+        <span class="close-modal">&times;</span>
+        <div id="modal-body">
+            </div>
+    </div>
+</div>
 </body>
 </html>
