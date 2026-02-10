@@ -124,6 +124,7 @@ function openCRMDetails() {
 
     modal.style.display = "block";
     document.body.style.overflow = "hidden"; // Stop background scroll
+    modal.scrollTo(0, 0);
 }
 
 // THE FIX: Universal Close Listener
