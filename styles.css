@@ -355,6 +355,27 @@ section {
     }
 }
 
+.modal-intro {
+    margin-bottom: 2rem;
+    color: var(--text-dim);
+    font-size: 1.1rem;
+    border-left: 3px solid var(--accent-orange);
+    padding-left: 1rem;
+}
+
+.modal-grid i {
+    margin-right: 8px;
+    color: var(--accent-orange);
+}
+
+.full-width {
+    grid-column: 1 / -1; /* Ensures "The Result" spans both columns on desktop */
+    background: rgba(255, 115, 0, 0.03);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px dashed rgba(255, 115, 0, 0.2);
+}
+
 /* --- Tech Icons Style --- */
 .project-tech {
     display: flex;
@@ -366,6 +387,36 @@ section {
 
 .project-tech i:hover {
     color: var(--accent-orange);
+    transform: translateY(-2px);
+    transition: all 0.3s ease;
+}
+
+/* Base style for the Firebase icon */
+.fa-fire {
+    font-size: 1.2rem;
+    color: var(--text-dim); /* Matches your other tech icons */
+    transition: all 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+/* Hover effect: Only triggers when the mouse is specifically on the flame */
+.fa-fire:hover {
+    color: #FFCA28 !important; /* Official Firebase Yellow */
+    transform: scale(1.3) translateY(-2px); /* Pops up and grows */
+    filter: drop-shadow(0 0 8px rgba(255, 202, 40, 0.6)); /* Glowing effect */
+}
+
+.gemini-font-icon {
+    font-size: 1.2rem; /* Matches your Font Awesome icons */
+    vertical-align: middle;
+    color: var(--text-dim);
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.gemini-font-icon:hover {
+    color: #4285f4; /* Gemini Blue */
     transform: translateY(-2px);
     transition: all 0.3s ease;
 }
@@ -721,3 +772,4 @@ nav,
         min-width: 0;
     }
 }
+

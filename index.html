@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <link rel="icon" type="image/png" href="assets/favicon.png">
 </head>
@@ -81,71 +82,99 @@
 </section>
 
         <section id="projects" class="projects-section">
-            <h2 data-aos="fade-right">Selected Projects</h2>
+    <h2 data-aos="fade-right">Selected Projects</h2>
 
-            <div class="project-grid">
-                <article class="project-card" data-aos="zoom-in-up">
-                    <div class="project-image">
-                        <img src="assets/project-one.png" alt="Mangata & Gallo Project">
-                    </div>
-                    <div class="project-info">
-                        <h3>Mangata & Gallo</h3>
-                        <p>A luxury jewellery landing page focused on elegance and responsive design.</p>
-                        <div class="project-tech">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <i class="fab fa-js"></i>
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <a href="https://mohiuddinkhantushar.github.io/coursera-mangata-gallo-website/" target="_blank" class="view-link">View Project</a>
-                    </div>
-                </article>
-
-                <article class="project-card" data-aos="zoom-in-up" data-aos-delay="200">
-                    <div class="project-image">
-                        <img src="assets/project-two.png" alt="Portfolio Website">
-                    </div>
-                    <div class="project-info">
-                        <h3>Personal Portfolio</h3>
-                        <p>A high-performance solutions showcase featuring Particles.js and AOS animations.</p>
-                        <div class="project-tech">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <i class="fab fa-js"></i>
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <a href="#" class="view-link">View Project</a>
-                    </div>
-                </article>
-
-                <article class="project-card" data-aos="zoom-in-up" data-aos-delay="200">
-                    <div class="project-image">
-                        <img src="assets/project-three.png" alt="Closed Loop CRM">
-                    </div>
-                    <div class="project-info">
-                        <h3>Closed Loop CRM</h3>
-                        <p>A high-performance lead tracking application that simplifies complex sales pipelines into a minimalist mobile interface for independent entrepreneurs.</p>
-                        <div class="project-tech">
-                            <i class="fab fa-html5"></i>
-                            <i class="fab fa-css3-alt"></i>
-                            <i class="fab fa-js"></i>
-                            <i class="fab fa-node-js"></i>
-                            <i class="fas fa-database" title="Firestore / NoSQL"></i>
-                            <i class="fab fa-github"></i>
-                        </div>
-                        
-                        <div class="project-tech">
-                            </div>
-
-                        <div class="project-links-row">
-                            <a href="#" class="view-link">View Project</a>
-                            <a href="javascript:void(0)" class="details-link" onclick="openCRMDetails()">Technical Details</a>
-                        </div>
-                    </div>
-
-                </article>
+    <div class="project-grid">
+        <!-- Project 1: Merge Point Landing Page -->
+        <article class="project-card" data-aos="zoom-in-up">
+            <div class="project-image">
+                <img src="assets/project-one.png" alt="Merge Point Landing Page">
             </div>
-        </section>
+            <div class="project-info">
+                <h3>Merge Point: Landing Page</h3>
+                <p>A high-conversion SaaS landing page built with Vanilla JS, featuring high-performance animations and optimized SEO architecture.</p>
+                <div class="project-tech">
+                    <i class="fab fa-html5"></i>
+                    <i class="fab fa-css3-alt"></i>
+                    <i class="fab fa-js"></i>
+                    <i class="fab fa-cc-stripe" title="Stripe Payments"></i>
+                    <i class="fab fa-github"></i>
+                </div>
+                <div class="project-links-row">
+                    <a href="https://mergepoint-software.com/" target="_blank" class="view-link">Visit Site</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Project 2: Merge Point Software App (The Animated One) -->
+        <article class="project-card" data-aos="zoom-in-up">
+            <div class="project-image">
+                <img src="assets/project-two.png" alt="Merge Point SaaS Engine">
+            </div>
+            <div class="project-info">
+                <h3>Merge Point: SaaS Engine</h3>
+                <p>An enterprise AI proposal engine. Architected with secure CI/CD pipelines and NoSQL data structures for rapid tender generation.</p>
+                <div class="project-tech">
+                    <i class="fab fa-js"></i>
+                    <i class="fab fa-node-js"></i>
+                    <i class="fas fa-database"></i>
+                    <i class="fas fa-fire"  title="Firebase / Firestore"></i>
+                    <i class="fas fa-bolt"  title="Pinecone Vector DB"></i>
+                    <i class="fab fa-github"></i>
+                    <span class="material-symbols-outlined gemini-font-icon" title="Google Gemini">
+                        magic_button
+                    </span>
+                </div>
+                <div class="project-links-row">
+                    <a href="javascript:void(0)" class="details-link" onclick="openMergeDetails()">Technical Details</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Project 3: YMC Website -->
+        <article class="project-card" data-aos="zoom-in-up" data-aos-delay="200">
+            <div class="project-image">
+                <img src="assets/project-four.png" alt="YMC Website">
+            </div>
+            <div class="project-info">
+                <h3>YMC Official</h3>
+                <p>A bespoke corporate identity website focusing on accessibility, brand storytelling, and high-speed asset loading.</p>
+                <div class="project-tech">
+                    <i class="fab fa-html5"></i>
+                    <i class="fab fa-css3-alt"></i>
+                    <i class="fab fa-js"></i>
+                    <i class="fas fa-fire"  title="Firebase / Firestore"></i>
+                    <i class="fas fa-database"></i>
+                    <i class="fab fa-github"></i>
+                </div>
+                <div class="project-links-row">
+                    <a href="#" class="view-link">View Project</a>
+                </div>
+            </div>
+        </article>
+
+        <!-- Project 4: Closed Loop CRM -->
+        <article class="project-card" data-aos="zoom-in-up" data-aos-delay="300">
+            <div class="project-image">
+                <img src="assets/project-three.png" alt="Closed Loop CRM">
+            </div>
+            <div class="project-info">
+                <h3>Closed Loop CRM</h3>
+                <p>A minimalist mobile lead tracking application for independent entrepreneurs, simplifying complex sales pipelines.</p>
+                <div class="project-tech">
+                    <i class="fab fa-js"></i>
+                    <i class="fab fa-node-js"></i>
+                    <i class="fas fa-database"></i>
+                    <i class="fas fa-fire"  title="Firebase / Firestore"></i>
+                    <i class="fab fa-github"></i>
+                </div>
+                <div class="project-links-row">
+                    <a href="javascript:void(0)" class="details-link" onclick="openCRMDetails()">Technical Details</a>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
 
         <section id="contact" class="contact-section">
             <div class="contact-container" data-aos="fade-up">

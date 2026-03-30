@@ -127,6 +127,50 @@ function openCRMDetails() {
     modal.scrollTo(0, 0);
 }
 
+function openMergeDetails() {
+    const modal = document.getElementById('project-modal');
+    const modalBody = document.getElementById('modal-body');
+
+    modalBody.innerHTML = `
+        <h2 class="accent">Merge Point: Enterprise SaaS</h2>
+        <p class="modal-intro">A high-performance AI engine designed to automate the creation of complex corporate tenders and proposals.</p>
+        
+        <div class="modal-grid">
+            <div>
+                <h4><i class="fas fa-brain"></i> The Intelligence</h4>
+                <p>Powered by <strong>Google Gemini AI</strong>, utilizing advanced prompt engineering to synthesize complex corporate data into polished, professional tender responses.</p>
+            </div>
+            <div>
+                <h4><i class="fas fa-shield-alt"></i> Security & Auth</h4>
+                <p>Implemented Firebase Auth with custom claims to manage multi-tenant organizational hierarchies and data siloing.</p>
+            </div>
+            <div>
+                <h4><i class="fas fa-network-wired"></i> RAG Infrastructure</h4>
+                <p>Leverages <strong>Pinecone</strong> vector embeddings and <strong>Firestore</strong> to ground the AI, ensuring every response is based on the user's specific knowledge base.</p>
+            </div>
+            <div>
+                <h4><i class="fas fa-credit-card"></i> Revenue Logic</h4>
+                <p>Fully integrated Stripe Billing API with webhooks to manage automated seat-based licensing and subscription life cycles.</p>
+            </div>
+            <div class="full-width">
+                <h4><i class="fas fa-vial"></i> The Result</h4>
+                <p>Reduced tender drafting time by 70% for initial users. The system maintains a 99.9% uptime using automated failover logic across Firebase and specialized microservices.</p>
+            </div>
+        </div>
+
+        <div class="modal-actions">
+            <a href="https://github.com/MohiuddinKhanTushar/merge-point-software" target="_blank" class="modal-btn github-btn">
+                <i class="fab fa-github"></i> View Repository
+            </a>
+            <a href="#" class="modal-btn notion-btn">
+                <i class="fas fa-book"></i> Documentation
+            </a>
+        </div>
+    `;
+
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevents background scrolling
+}
 // THE FIX: Universal Close Listener
 window.addEventListener('click', function(event) {
     const modal = document.getElementById("project-modal");
