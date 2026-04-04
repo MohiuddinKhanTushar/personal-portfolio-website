@@ -158,6 +158,161 @@ section {
     pointer-events: none;
 }
 
+/* --- Featured Project Section --- */
+.featured-section {
+    padding: 100px 10%;
+    background: linear-gradient(180deg, rgba(10, 10, 10, 1) 0%, rgba(20, 20, 20, 1) 100%);
+    border-bottom: 1px solid rgba(255, 115, 0, 0.05);
+    overflow: hidden;
+}
+
+.featured-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.featured-content {
+    flex: 1;
+}
+
+.accent-label {
+    color: var(--accent-orange);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.featured-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+}
+
+.featured-content p {
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+.featured-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.featured-stats li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+}
+
+.featured-stats i {
+    color: var(--accent-orange);
+    font-size: 1.1rem;
+}
+
+.featured-btns {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+/* --- Featured Image Fan Animation --- */
+.featured-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.fan-container {
+    position: relative;
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 16/10;
+}
+
+.fan-container img {
+    position: absolute;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Base positions */
+.fan-main {
+    z-index: 3;
+    position: relative !important;
+}
+
+.screen-left {
+    z-index: 2;
+    transform: translateX(-15%) translateY(5%) rotate(-5deg) scale(0.9);
+    filter: brightness(0.6);
+}
+
+.screen-right {
+    z-index: 1;
+    transform: translateX(15%) translateY(10%) rotate(5deg) scale(0.85);
+    filter: brightness(0.4);
+}
+
+/* Hover Animation Triggers */
+.featured-section:hover .screen-left {
+    transform: translateX(-40%) translateY(-5%) rotate(-12deg) scale(0.95);
+    filter: brightness(0.9);
+}
+
+.featured-section:hover .screen-right {
+    transform: translateX(40%) translateY(5%) rotate(12deg) scale(0.9);
+    filter: brightness(0.8);
+}
+
+.featured-section:hover .fan-main {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 30px 60px rgba(255, 115, 0, 0.15);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 992px) {
+    .featured-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 80px;
+    }
+
+    .featured-stats {
+        justify-items: start;
+        max-width: 400px;
+        margin: 2rem auto;
+    }
+
+    .featured-btns {
+        justify-content: center;
+    }
+
+    .featured-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .fan-container {
+        max-width: 350px;
+    }
+}
+
 /* --- 4. Project Grid & Cards --- */
 .project-grid {
     display: grid;
